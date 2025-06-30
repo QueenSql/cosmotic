@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Cosmotic Beauty</title>
+    <link rel="stylesheet" href="{% static 'products/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'products/images/logo.jpg' %}" alt="Cosmotic Beauty Logo" height="80">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'candles' %}">Candles</a></li>
+                <li><a href="{% url 'room_sprays' %}">Room Sprays</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Story</h2>
+        <p>At Cosmotic Beauty, we believe in enhancing your daily life through beautifully crafted scents. From the heart of South Africa, our candle and room spray collections are inspired by nature’s most delightful fragrances. Whether you're looking for a moment of calm, a burst of freshness, or a gift for someone special, you'll find it here.</p>
+
+        <h3>Why Choose Us?</h3>
+        <ul style="list-style-type: none; font-size: 1.2em; padding-left: 0;">
+            <li>Natural ingredients</li>
+            <li>Hand-poured in small batches</li>
+            <li>🇿🇦 Proudly South African</li>
+            <li>Scent with soul</li>
+        </ul>
+    </main>
+
+    <footer style="text-align: center; margin: 40px 0; color: #5a3e36;">
+        <p>&copy; 2025 Cosmotic Beauty. All rights reserved.</p>
+    </footer>
+</body>
+</html>

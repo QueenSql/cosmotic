@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Register - Cosmotic Beauty{% endblock %}
+
+{% block content %}
+<main class="register-page">
+    <h2>Create an Account</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="id_username">
+        <small class="helptext" id="id_username_helptext">
+            Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+        </small>
+
+        <label for="id_password1">Password:</label>
+        <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+        <small class="helptext" id="id_password1_helptext">
+            <ul>
+                <li>Your password can’t be too similar to your other personal information.</li>
+                <li>Your password must contain at least 8 characters.</li>
+                <li>Your password can’t be a commonly used password.</li>
+                <li>Your password can’t be entirely numeric.</li>
+            </ul>
+        </small>
+
+        <label for="id_password2">Password confirmation:</label>
+        <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+        <small class="helptext" id="id_password2_helptext">
+            Enter the same password as before, for verification.
+        </small>
+
+        <button type="submit" class="btn-primary">Register</button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Cosmotic Beauty{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'products/css/styles.css' %}">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="{% static 'products/images/logo.jpg' %}" alt="Cosmotic Beauty Logo" height="80">
+    </div>
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'candles' %}">Candles</a></li>
+            <li><a href="{% url 'room_sprays' %}">Room Sprays</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+{% block content %}{% endblock %}
+<footer>
+    <p>&copy; 2025 Cosmotic Beauty. All rights reserved.</p>
+</footer>
+</body>
+</html>
