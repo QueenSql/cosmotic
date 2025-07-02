@@ -1,1 +1,1 @@
-https://github.com/queensql/cosmotic.git
+https://github.com/QueenSql/cosmotic
